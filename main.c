@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "includes/ft_grid.h"
+#include "includes/ft_all.h"
 
 int main(int argc, char **argv)
 {

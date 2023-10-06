@@ -22,7 +22,7 @@ void ft_free_grid(char **grid, int x, int y)
 {
 	int i;
 
-	i = y;
+	i = x;
 	while (i > 0)
 	{
 		free(grid[i]);
