@@ -6,21 +6,21 @@
 /*   By: v3l1g4 <v3l1g4@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 23:12:54 by v3l1g4            #+#    #+#             */
-/*   Updated: 2023/10/06 04:11:36 by v3l1g4           ###   ########.fr       */
+/*   Updated: 2023/10/06 16:37:39 by v3l1g4           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-/*
-char *ft_get_player_name(int n)
+#include "../includes/ft_player.h"
+
+char ft_get_player_name(int n)
 {
 	char str[15];
 	printf("Player number %d", n);
-	scanf("%s", &str); 
-	return (str);
+	scanf("%s", str); 
+	return (*str);
 }
 
-	*//* example utilisation scanf : 
+	/* example utilisation scanf : 
 	int a;
 
 	printf("Enter first number: ");
