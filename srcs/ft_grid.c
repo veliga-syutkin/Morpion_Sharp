@@ -20,7 +20,7 @@ char **ft_create_grid(int x, int y)
 	return (grid);
 }
 
-void ft_free_grid(char **grid, int x, int y)
+void ft_free_grid(int x, int y, char **grid)
 {
 	int i;
 

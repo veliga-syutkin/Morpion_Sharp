@@ -15,6 +15,6 @@ int main(int argc, char **argv)
 	gameheader = ft_players();
 	ft_print_game_header(gameheader);
 	ft_print_grid(x, y, grid);
-	ft_free_grid(grid, x, y);
+	ft_free_grid(x, y, grid);
 	return (0);
 }

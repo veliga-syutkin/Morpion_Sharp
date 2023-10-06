@@ -6,16 +6,39 @@
 /*   By: v3l1g4 <v3l1g4@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 23:12:54 by v3l1g4            #+#    #+#             */
-/*   Updated: 2023/10/06 18:08:44 by v3l1g4           ###   ########.fr       */
+/*   Updated: 2023/10/06 20:08:30 by v3l1g4           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_player.h"
 
-void	ft_get_player_name(char *name, int n)
+void ft_buffer_clear()
 {
-	printf("Player number %d:\n", n);
-	scanf("%s", name);
+	int c = 0;
+	while (c != '\n' && c != EOF)
+		c = getchar();
+}
+
+int ft_get_player_name(char *name, int n)
+{
+	char *index;
+	
+	index = NULL;
+	printf("Player number %d (14 characters maximum): ", n);
+	if (fgets(name, 15, stdin) != NULL)
+	{
+		index = strchr(name, '\n');
+		if (index != NULL)
+			*index = '\0';
+		else
+			ft_buffer_clear();
+		return 1;
+	}
+	else
+	{
+		ft_buffer_clear();
+		return 0;
+	}
 }
 
 struct s_game_header *ft_players(void)

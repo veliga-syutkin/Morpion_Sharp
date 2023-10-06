@@ -6,7 +6,7 @@
 /*   By: v3l1g4 <v3l1g4@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 23:13:27 by v3l1g4            #+#    #+#             */
-/*   Updated: 2023/10/06 18:07:30 by v3l1g4           ###   ########.fr       */
+/*   Updated: 2023/10/06 19:22:01 by v3l1g4           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ typedef struct s_game_header
 	int score2;
 } t_game_header;
 
-void	ft_get_player_name(char *name, int n);
+void ft_buffer_clear();
+
+int ft_get_player_name(char *name, int n);
 
 struct s_game_header *ft_players(void);
 
