@@ -1,8 +1,7 @@
 #ifndef FT_GRID_H
 # define FT_GRID_H
 
-#include <stdio.h>
-#include <stdlib.h>
+# include "ft_all.h"
 
 char **ft_create_grid(int x, int y);
 void ft_free_grid(char **grid, int x, int y);

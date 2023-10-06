@@ -1,7 +1,7 @@
 NAME = MorpionSharp.exe
 
 # Utilisation de wildcard pour inclure tous les fichiers source .c
-SRCS = $(wildcard *.c)
+SRCS = $(wildcard srcs/*.c)
 
 OBJS = $(SRCS:.c=.o)
 

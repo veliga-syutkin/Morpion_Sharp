@@ -6,15 +6,18 @@
 /*   By: v3l1g4 <v3l1g4@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 23:13:27 by v3l1g4            #+#    #+#             */
-/*   Updated: 2023/10/04 23:44:24 by v3l1g4           ###   ########.fr       */
+/*   Updated: 2023/10/06 04:47:51 by v3l1g4           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef FT_PLAYER_H
 # define FT_PLAYER_H
 
+# include "ft_all.h"
+
 // Players: name + score
 
-char player1;
+//char player1;
 
 #endif

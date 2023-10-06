@@ -1,3 +1,6 @@
+#include "../includes/ft_grid.h"
+
+// create grid
 char **ft_create_grid(int x, int y)
 {
 	char	**grid;
@@ -11,8 +14,7 @@ char **ft_create_grid(int x, int y)
 	{
 		grid[i] = malloc(y * sizeof(char)); //on crée la deuxième dimension de la grille en rajoutant Y cases à chaque case du tableau
 		if(!grid[i])
-			return (grid[i]); // renvoyer une erreur (?) se barrer (?) //-> voir faire une fonction "achtung ?" 
-		grid[i] = '|';
+			return (NULL); // renvoyer une erreur (?) se barrer (?) //-> voir faire une fonction "achtung ?" 
 		i++;
 	}
 	return (grid);
@@ -22,17 +24,18 @@ void ft_free_grid(char **grid, int x, int y)
 {
 	int i;
 
+	i = y;
 	i = x;
 	while (i > 0)
 	{
 		free(grid[i]);
 		if(!grid[i])
-			return (grid[i]); // erreur
+			return ; // erreur
 		i--;
 	}
 	free(grid);
 	if(!grid)
-		return (grid);
+		return ;
 }
 
 void ft_print_cell(int x, int y, char **grid)// <<<- 
@@ -97,6 +100,7 @@ void ft_print_grid(int x, int y, char **grid)
 {
 	int i;
 
+	i = y;
 	i = 0;
 	while (i < x)
 	{
