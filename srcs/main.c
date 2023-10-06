@@ -16,5 +16,6 @@ int main(int argc, char **argv)
 	ft_print_game_header(gameheader);
 	ft_print_grid(x, y, grid);
 	ft_free_grid(x, y, grid);
+	printf("\n\n\n");
 	return (0);
 }
