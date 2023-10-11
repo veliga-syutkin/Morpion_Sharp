@@ -6,7 +6,7 @@
 /*   By: v3l1g4 <v3l1g4@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 23:12:54 by v3l1g4            #+#    #+#             */
-/*   Updated: 2023/10/06 20:08:30 by v3l1g4           ###   ########.fr       */
+/*   Updated: 2023/10/11 04:27:07 by v3l1g4           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	ft_print_game_header(t_game_header *ptrStruct)
 {
 	printf("%s ", ptrStruct->player1);
 	printf("%d-%d ", ptrStruct->score1, ptrStruct->score2);
-	printf("%s\n\n", ptrStruct->player2);
+	printf("%s\n", ptrStruct->player2);
 }
 
 void	ft_free_players(t_game_header *game)
