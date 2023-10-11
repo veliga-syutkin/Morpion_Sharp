@@ -5,8 +5,8 @@
 
 char **ft_create_grid(int x, int y);
 void ft_free_grid(int x, int y, char **grid);
-void ft_print_cell(int x, int y, char **grid);
-void ft_print_line(int x, int y, char **grid);
-void ft_print_grid(int x, int y, char **grid);
+void	ft_print_cell(int x, int y, char **grid);
+void	ft_print_line(int line, int size, char **grid);
+void ft_print_grid(int line, char **grid);
 
 #endif

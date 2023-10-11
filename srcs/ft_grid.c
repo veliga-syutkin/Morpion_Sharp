@@ -1,20 +1,29 @@
 #include "../includes/ft_grid.h"
 
 // create grid
-char **ft_create_grid(int x, int y)
+char **ft_create_grid(int line, int y)
 {
 	char	**grid;
 	int 	i;
+	int		j;
 
-	grid = malloc(x * sizeof(char*)); //on crée un tableau de X cases
+	grid = malloc(line * sizeof(char*)); //on crée un tableau de X cases
 	if(!grid)
-		return (grid); //erreur
+		return (NULL); //erreur
+
 	i = 0;
-	while(i < x)
+	while(i < line)
 	{
-		grid[i] = malloc(y * sizeof(char)); //on crée la deuxième dimension de la grille en rajoutant Y cases à chaque case du tableau
+		grid[i] = malloc(y * sizeof(char) + 1); //on crée la deuxième dimension de la grille en rajoutant Y cases à chaque case du tableau
 		if(!grid[i])
 			return (NULL); // renvoyer une erreur (?) se barrer (?) //-> voir faire une fonction "achtung ?" 
+
+		j = 0;
+		while (j < y)
+		{
+			grid[i][j] = '|';
+			j++;
+		}
 		i++;
 	}
 	return (grid);
@@ -38,73 +47,27 @@ void ft_free_grid(int x, int y, char **grid)
 		return ;
 }
 
-void ft_print_cell(int x, int y, char **grid)// <<<- 
+void	ft_print_line(int line, int size, char **grid)
 {
-	//on modifiera pour des write plus tard
-	//
-	/* 
-	
-	si premiere case 
-	|
-	puis dans tous les cas :
-	_X_| 
-	*/
-    if (x == 0)
-        printf("|");
-    else
-	    printf("_%c_|", grid[x][y]);
+	int column;
+
+	column = 0;
+	while (column < size)
+	{
+		printf("%c ", grid[line][column]);
+		column++;
+	}
+	printf("\n");
 }
 
-void ft_print_line(int x, int y, char **grid)
+void ft_print_grid(int line, char **grid)
 {
-	/*
-	si premiere ligne 
-	-----------------
-	puis dans tous les cas : 
-	|_X_|_X_|_X_|_X_|  (ft_print_cell)
-	-----------------
-	*/
-	int i;
+	int index;
 
-	if (y == 0)
+	index = 0;
+	while (index < line)
 	{
-		write(1, "\n", 1); //afficher une ligne de ---
-		i = 0;
-		while (i < x)
-		{
-			write(1, "----", 4);
-			i++;
-		}
-		write(1, "\n", 1);
-	}
-
-	i = 0;
-	while (i < x)
-	{
-		ft_print_cell(i, y, grid);
-		i++;
-	}
-
-	write(1, "\n", 1); //afficher une ligne de ---
-	i = 0;
-	while (i < x)
-	{
-		write(1, "----", 4);
-		i++;
-	}
-	write(1, "\n", 1);
-
-}
-
-void ft_print_grid(int x, int y, char **grid)
-{
-	int i;
-
-	i = y;
-	i = 0;
-	while (i < x)
-	{
-		ft_print_line(x, i, grid); //on avance ligne a ligne
-		i++;
+		ft_print_line(index, line, grid); //on avance ligne a ligne
+		index++;
 	}
 }

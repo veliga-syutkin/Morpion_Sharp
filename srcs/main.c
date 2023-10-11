@@ -14,8 +14,8 @@ int main(int argc, char **argv)
 	grid = ft_create_grid(x, y);
 	gameheader = ft_players();
 	ft_print_game_header(gameheader);
-	ft_print_grid(x, y, grid);
+	ft_print_grid(x, grid);
 	ft_free_grid(x, y, grid);
-	printf("\n\n\n");
+	printf("\n- - - \n");
 	return (0);
 }
